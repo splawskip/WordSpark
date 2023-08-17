@@ -1,0 +1,6 @@
+.guess-cell {
+	width: 20%;
+	display: grid;
+	place-content: center;
+	aspect-ratio: 1 / 1;
+}

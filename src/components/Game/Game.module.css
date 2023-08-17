@@ -1,0 +1,6 @@
+.game {
+	display: grid;
+	place-items: center;
+	width: 620px;
+	height: 720px;
+}
