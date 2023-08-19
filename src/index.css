@@ -1,0 +1,13 @@
+:root {
+	--clr-dark:#1D1F25;
+}
+
+html {
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+}
+
+#root {
+	width: 100vw;
+	height: 100vh;
+}

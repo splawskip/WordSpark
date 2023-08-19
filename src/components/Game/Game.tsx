@@ -1,21 +1,26 @@
-import React from 'react';
-
+import GuessProvider from '../GuessProvider/GuessProvider';
+import Heading from '../Heading/Heading';
 import GuessBoard from '../GuessBoard';
 import GuessForm from '../GuessForm';
+
 import styles from './Game.module.css';
 
 function Game() {
-  const [guesses, setGuesses] = React.useState<string[]>([]);
-
-  function handleGuessSubmit(tentativeGuess:string):void {
-    const futureGuesses:string[] = [...guesses, tentativeGuess];
-    setGuesses(futureGuesses);
-  }
+  // Get current date.
+  const date:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
+  // Show it to the world.
   return (
-    <div className={styles.game}>
-      <GuessBoard guesses={guesses} />
-      <GuessForm handleGuessSubmit={() => handleGuessSubmit} />
-    </div>
+    <GuessProvider>
+      <div className={styles.wrapper}>
+        <div className={styles.game}>
+          <Heading as="h1">WordSpark ⚛️</Heading>
+          <Heading as="h2">{date}</Heading>
+          <GuessBoard />
+          <GuessForm />
+        </div>
+      </div>
+    </GuessProvider>
   );
 }
+
 export default Game;
