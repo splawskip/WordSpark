@@ -1,7 +1,9 @@
+// React.
 import React from 'react';
-
+// Context.
 import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
 import { AnswerContext } from '../AnswerProvider/AnswerProvider';
+// Constants.
 import NUM_OF_GUESSES_ALLOWED from '../../constants';
 
 export const GuessContext = React.createContext<GuessContextType>({} as GuessContextType);

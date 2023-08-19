@@ -1,3 +1,4 @@
+// Styles.
 import styles from './Heading.module.css';
 
 function Heading({ as = 'h3', children } : HeadingProps) {

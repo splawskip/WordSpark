@@ -1,4 +1,6 @@
+// React.
 import React from 'react';
+// Hooks.
 import useSWR from 'swr';
 
 export const AnswerContext = React.createContext<string>('');

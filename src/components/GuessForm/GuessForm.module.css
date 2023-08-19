@@ -12,26 +12,26 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	color: rgba(255, 255, 255, 0.500);
+	color: hsl(var(--clr-white-hsl) / 0.5);
 	gap:1rem;
 }
 
 .input {
 	border-radius: 30px;
 	padding: 1rem 1.5rem;
-	color: rgba(255, 255, 255, 0.500);
+	color: hsl(var(--clr-white-hsl)/0.5);
 	text-transform: uppercase;
-	background: linear-gradient(135deg, #2D3047 0%, #48495F 100%);
-	box-shadow: inset 0px 0px 0px 5px rgba(0, 0, 0, 0.15);
+	background: var(--clr-incorrect);
+	box-shadow: inset 0px 0px 0px 5px hsl(var(--clr-black-hsl) / 0.15);
 	border: 0;
 	outline: 0;
 }
 
 .input:focus-visible {
-	outline: 2px solid #3498db;
+	outline: 2px solid var(--clr-focus);
 }
 
 .input::placeholder {
-	color: rgba(255, 255, 255, 0.250);
+	color: hsl(var(--clr-white-hsl) / 0.250);
 	text-transform: uppercase;
 }
