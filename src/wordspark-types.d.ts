@@ -3,13 +3,24 @@ type HeadingProps = {
   children: React.ReactNode;
 };
 
+type GameStatusContext = {
+  gameStatus:string,
+  setGameStatus: React.SetStateAction
+};
+
 type GuessContextType = {
   guesses:string[],
   handleGuessSubmit: (tentativeGuess:string) => void
 };
 
-type GuessProviderProps = {
+type ChildrenOnly = {
   children: React.ReactNode;
+};
+
+type AnswerResponse = {
+  data: {
+    today:string
+  }
 };
 
 type GuessProps = {

@@ -2,11 +2,13 @@ import React from 'react';
 
 import styles from './GuessForm.module.css';
 import { GuessContext } from '../GuessProvider/GuessProvider';
+import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
 
 function GuessForm() {
   const [tentativeGuess, setTentativeGuess] = React.useState<string>('');
   const guessInputId:string = React.useId();
   const { handleGuessSubmit } = React.useContext(GuessContext);
+  const { gameStatus } = React.useContext(GameStatusContext);
 
   const handleSubmit = (event:React.FormEvent<HTMLFormElement>):void => {
     event.preventDefault();
@@ -34,6 +36,7 @@ function GuessForm() {
           required
           value={tentativeGuess}
           onChange={handleChange}
+          disabled={gameStatus !== 'running'}
         />
       </label>
     </form>

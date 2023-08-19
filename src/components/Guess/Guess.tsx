@@ -1,10 +1,13 @@
+import React from 'react';
 import GuessCell from '../GuessCell';
 import styles from './Guess.module.css';
 import { range, checkGuess } from '../../utils';
+import { AnswerContext } from '../AnswerProvider/AnswerProvider';
 
 function Guess({ guess } : GuessProps) {
+  const answer = React.useContext(AnswerContext);
   // Get guess result.
-  const result = checkGuess(guess, 'kebab');
+  const result = checkGuess(guess, answer);
   // Show it to the world.
   return (
     <p className={styles.guess}>
