@@ -1,0 +1,38 @@
+@keyframes notification {
+	from {
+	  transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(20%);
+	}
+}
+
+.notification {
+  width: 350px;
+  position: fixed;
+  top: 0;
+  padding: 1rem 1.5rem;
+  background: var(--clr-incorrect);
+  color: hsl(var(--clr-white-hsl) / 0.5);
+  box-shadow: inset 0px 0px 0px 5px hsl(var(--clr-black-hsl) / 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  animation: notification 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
+  will-change: transform;
+  text-align: center;
+}
+
+.won {
+	color: hsl(var(--clr-black-hsl) / 0.60);
+	background: var(--clr-correct);
+}
+
+.lost {
+	color: hsl(var(--clr-black-hsl) / 0.60);
+	background: var(--clr-lost);
+}

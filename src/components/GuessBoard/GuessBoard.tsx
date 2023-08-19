@@ -1,8 +1,13 @@
+// React.
 import React from 'react';
-import styles from './GuessBoard.module.css';
-import { range } from '../../utils';
-import Guess from '../Guess';
+// Context
 import { GuessContext } from '../GuessProvider/GuessProvider';
+// Components.
+import Guess from '../Guess';
+// Styles.
+import styles from './GuessBoard.module.css';
+// Utilities.
+import { range } from '../../utils';
 
 const NUM_OF_ALLOWED_GUESSES = 6;
 

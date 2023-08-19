@@ -1,8 +1,10 @@
+// React.
 import React from 'react';
-
-import styles from './GuessForm.module.css';
+// Context.
 import { GuessContext } from '../GuessProvider/GuessProvider';
 import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
+// Styles.
+import styles from './GuessForm.module.css';
 
 function GuessForm() {
   const [tentativeGuess, setTentativeGuess] = React.useState<string>('');
