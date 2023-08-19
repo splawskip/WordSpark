@@ -1,8 +1,13 @@
+// React.
 import React from 'react';
-import GuessCell from '../GuessCell';
-import styles from './Guess.module.css';
-import { range, checkGuess } from '../../utils';
+// Context.
 import { AnswerContext } from '../AnswerProvider/AnswerProvider';
+// Components.
+import GuessCell from '../GuessCell';
+// Utils.
+import { range, checkGuess } from '../../utils';
+// Styles.
+import styles from './Guess.module.css';
 
 function Guess({ guess } : GuessProps) {
   const answer = React.useContext(AnswerContext);

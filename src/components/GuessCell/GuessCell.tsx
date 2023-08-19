@@ -1,3 +1,4 @@
+// Styles.
 import styles from './GuessCell.module.css';
 
 function GuessCell({ letter, status } : GuessCellProps) {
