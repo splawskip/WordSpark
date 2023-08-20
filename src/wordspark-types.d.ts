@@ -33,7 +33,12 @@ type GuessCellProps = {
   status:string | undefined,
 };
 
-interface ValidatedGuess {
+type ValidatedGuess = {
   letter: string;
   status: string;
-}
+};
+
+type NotificationProps = {
+  children: React.ReactNode,
+  gameStatus:string
+};

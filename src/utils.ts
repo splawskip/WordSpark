@@ -32,7 +32,7 @@ export const range = (start:number, end?:number, step:number = 1) : number[] => 
  * @param answer - string - Answer to check against guess.
  * @returns - ValidatedGuess[] - Array of object that holds validated guess data.
  */
-export function checkGuess(guess:string | undefined, answer:string) : ValidatedGuess[] {
+export const checkGuess = (guess:string | undefined, answer:string) : ValidatedGuess[] => {
   // Indicator that marks we've successfully dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓';
   // Check if we got a guess.
@@ -82,4 +82,42 @@ export function checkGuess(guess:string | undefined, answer:string) : ValidatedG
   }
   // Spit it out.
   return result;
-}
+};
+
+/**
+ * Generates string that represents results of the game.
+ *
+ * @param guesses - string[] - Guesses.
+ * @param answer - string - Answer to check against guesses.
+ * @returns - string - String that represents results of the game.
+ */
+export const generateResultsBlocks = (guesses:string[], answer:string) : string => {
+  // Get player results.
+  const results:string = guesses.map(
+    (guess) => checkGuess(guess, answer),
+  ).map(
+    (validatedGuess) => validatedGuess.map(({ status }) => {
+      // Prepare container for block.
+      let block:string = '';
+      // Resolve block type.
+      switch (status) {
+        case 'correct':
+          block = '🟩';
+          break;
+        case 'misplaced':
+          block = '🟨';
+          break;
+        case 'incorrect':
+        default:
+          block = '⬛';
+          break;
+      }
+      // Spit it out.
+      return block;
+    }),
+  ).map(
+    (guessBlocks) => `${guessBlocks.join('')}`,
+  ).join('\n');
+  // Spit it out.
+  return results;
+};

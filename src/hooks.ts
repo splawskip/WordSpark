@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+// React.
+import React from 'react';
+// Vendors.
 import JSConfetti from 'js-confetti';
 
 /**
@@ -8,7 +10,7 @@ import JSConfetti from 'js-confetti';
  * @returns void
  */
 function useConfetti(gameStatus:string) : void {
-  useEffect(() => {
+  React.useEffect(() => {
     // Grab confetti.
     const jsConfetti = new JSConfetti();
     // Throw confetti on win.
