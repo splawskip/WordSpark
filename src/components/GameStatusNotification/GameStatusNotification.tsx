@@ -16,6 +16,7 @@ function GameStatusNotification() {
   const { gameStatus } = React.useContext(GameStatusContext);
   const answer = React.useContext(AnswerContext);
   const { guesses } = React.useContext(GuessContext);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
   // Get current date.
   const date:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
   /**
@@ -46,6 +47,8 @@ function GameStatusNotification() {
             {guesses.length > 1 ? 'guesses' : 'guess'}
           </strong>
           .
+          {' '}
+          Comeback tomorrow!
         </p>
       )
         : (
@@ -54,9 +57,11 @@ function GameStatusNotification() {
             {' '}
             <strong>{answer}</strong>
             .
+            {' '}
+            Comeback tomorrow!
           </p>
         )}
-      <button className={styles.button} type="button" onClick={handleCopyResults}>Copy results to clipboard</button>
+      <button ref={buttonRef} className={styles.button} type="button" onClick={handleCopyResults}>Copy results to clipboard</button>
     </Notification>
   );
 }
