@@ -1,30 +1,30 @@
 .form {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
 	gap: 1rem;
+	align-items: center;
+	justify-content: flex-start;
 	margin: 1rem;
 }
 
 .label {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	color: hsl(var(--clr-white-hsl) / 0.5);
 	gap:1rem;
+	align-items: center;
+	justify-content: flex-start;
+	color: hsl(var(--clr-white-hsl) / 50%);
 }
 
 .input {
-	border-radius: 30px;
 	padding: 1rem 1.5rem;
-	color: hsl(var(--clr-white-hsl)/0.5);
+	color: hsl(var(--clr-white-hsl)/50%);
 	text-transform: uppercase;
 	background: var(--clr-incorrect);
-	box-shadow: inset 0px 0px 0px 5px hsl(var(--clr-black-hsl) / 0.15);
 	border: 0;
+	border-radius: 30px;
 	outline: 0;
+	box-shadow: inset 0 0 0 5px hsl(var(--clr-black-hsl) / 15%);
 }
 
 .input:focus-visible {
@@ -32,6 +32,6 @@
 }
 
 .input::placeholder {
-	color: hsl(var(--clr-white-hsl) / 0.250);
+	color: hsl(var(--clr-white-hsl) / 25%);
 	text-transform: uppercase;
 }
