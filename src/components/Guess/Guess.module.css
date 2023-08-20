@@ -1,7 +1,7 @@
 .guess {
-	width: 100%;
 	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
 	gap: 30px;
+	align-items: stretch;
+	justify-content: space-between;
+	width: 100%;
 }
