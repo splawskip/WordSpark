@@ -1,7 +1,13 @@
 import { useEffect } from 'react';
 import JSConfetti from 'js-confetti';
 
-function useConfetti(gameStatus:string) {
+/**
+ * Custom hook responsible for throwing a confetti.
+ *
+ * @param gameStatus - string - Game status.
+ * @returns void
+ */
+function useConfetti(gameStatus:string) : void {
   useEffect(() => {
     // Grab confetti.
     const jsConfetti = new JSConfetti();

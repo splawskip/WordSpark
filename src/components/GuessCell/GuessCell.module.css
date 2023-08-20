@@ -1,11 +1,11 @@
 .cell {
 	display: grid;
 	place-content: center;
-	width: 100px;
-	height: 100px;
+	width: 4rem;
+	height: 4rem;
 	aspect-ratio: 1 / 1;
 	padding: .85rem 1.75rem;
-	font-size: 50px;
+	font-size: 2rem;
 	font-style: normal;
 	font-weight: 800;
 	line-height: normal;

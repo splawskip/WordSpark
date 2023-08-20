@@ -12,8 +12,27 @@
 }
 
 html {
+	overflow-x: hidden;
 	font-family: Nunito, sans-serif;
 	font-size: 20px;
+}
+
+@media screen and (width < 1200px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media screen and (width < 1024px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media screen and (width < 375px) {
+	html {
+		font-size: 12px;
+	}
 }
 
 #root {

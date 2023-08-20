@@ -23,7 +23,7 @@ function Game() {
       <div className={styles.game}>
         {gameStatus !== 'running' && <Notification />}
         <Heading as="h1">WordSpark ⚛️</Heading>
-        <Heading as="h2">{date}</Heading>
+        <Heading as="h2" type="subheading">{date}</Heading>
         <GuessBoard />
         <GuessForm />
       </div>
