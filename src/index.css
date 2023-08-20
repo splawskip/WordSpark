@@ -16,6 +16,7 @@ html {
 	overflow-x: hidden;
 	font-family: Nunito, sans-serif;
 	font-size: 20px;
+	background-color: var(--clr-dark);
 }
 
 @media screen and (width < 1200px) {
