@@ -20,7 +20,7 @@ You can access the live version of WordSpark by visiting: [WordSpark Live](https
 - **StyleLint**: Used to ensure code consistency and adherence to standards.
 - **ESLint**: Used with the AirBNB React standards to maintain code quality.
 - **Prettier**: Used as a code formatter to ensure consistent code style.
-- **TSDoc**: Used for generating documentation for the codebase.
+- **TSDoc**: Used for documentig project.
 - **GitHub Pages**: Used for hosting the WordSpark application.
 - **GitHub Actions**: Utilized as a simple CI/CD pipeline for automated deployments.
 - **Husky**: Utilized as a pre-commit hooks to ensure code quality.
