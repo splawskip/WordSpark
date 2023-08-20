@@ -18,6 +18,7 @@
 
 .input {
 	padding: 1rem 1.5rem;
+	font-size: clamp(16px, 1rem, 1rem);
 	color: hsl(var(--clr-white-hsl) / 50%);
 	text-transform: uppercase;
 	background: var(--clr-incorrect);
