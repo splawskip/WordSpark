@@ -1,3 +1,3 @@
-import GameStatusNotification from './GamestatusNotification';
+import GameStatusNotification from './GameStatusNotification';
 
 export default GameStatusNotification;
