@@ -1,5 +1,6 @@
 .cell {
 	position: relative;
+	z-index: 1;
 	display: grid;
 	place-content: center;
 	width: 4rem;
