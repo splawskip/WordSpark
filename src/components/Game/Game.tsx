@@ -7,6 +7,7 @@ import Heading from '../Heading/Heading';
 import GuessBoard from '../GuessBoard';
 import GuessForm from '../GuessForm';
 import GameStatusNotification from '../GameStatusNotification';
+import Footer from '../Footer';
 // Styles.
 import styles from './Game.module.css';
 // Hooks.
@@ -26,6 +27,7 @@ function Game() {
         <Heading as="h2" type="subheading">{date}</Heading>
         <GuessBoard />
         <GuessForm />
+        <Footer />
       </div>
     </div>
   );

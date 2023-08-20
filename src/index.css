@@ -9,6 +9,7 @@
 	--clr-incorrect:linear-gradient(135deg, #2D3047 0%, #48495F 100%);
 	--clr-misplaced:linear-gradient(135deg, #D9B952 0%, #FDD85D 100%);
 	--clr-lost:linear-gradient(135deg, #C93C3C 0%, #FF5E5E 100%);
+	--clr-heart: hsl(0deg 100% 50%);
 }
 
 html {
