@@ -1,6 +1,6 @@
 .guess {
 	display: flex;
-	gap: 30px;
+	gap: 1rem;
 	align-items: stretch;
 	justify-content: space-between;
 	width: 100%;

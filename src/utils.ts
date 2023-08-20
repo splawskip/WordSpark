@@ -1,3 +1,11 @@
+/**
+ * Creates array of numbers that represents given range.
+ *
+ * @param start - number - Number from which range will start.
+ * @param end - number | undefined - Number on which range will end.
+ * @param step - number | undefined - Number by which range steps will increment, by default 1.
+ * @returns - number[] - array of numbers that represents given range.
+ */
 export const range = (start:number, end?:number, step:number = 1) : number[] => {
   // Initialize array for our range.
   const output:number[] = [];
@@ -17,11 +25,13 @@ export const range = (start:number, end?:number, step:number = 1) : number[] => 
   return output;
 };
 
-interface ValidatedGuess {
-  letter: string;
-  status: string;
-}
-
+/**
+ * Checks if provided guess matches provided answer.
+ *
+ * @param guess - string | undefined - Guess to check against answer.
+ * @param answer - string - Answer to check against guess.
+ * @returns - ValidatedGuess[] - Array of object that holds validated guess data.
+ */
 export function checkGuess(guess:string | undefined, answer:string) : ValidatedGuess[] {
   // Indicator that marks we've successfully dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓';

@@ -1,21 +1,26 @@
-.heading {
-	margin-bottom: 1rem;
-}
-
 .h1 {
+	margin-bottom: 1rem;
 	font-size: 2.4rem;
 	font-weight: 800;
 	line-height: 1;
-	color: #CED5DB;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 .h2 {
+	margin-bottom: 1.5rem;
 	font-size: 1.8rem;
 	font-weight: 800;
 	line-height: 1;
 	color: #6F7276;
 	text-align: center;
 	text-transform: capitalize;
+}
+
+.heading {
+	color: hsl(var(--clr-white-hsl) / 75%);
+}
+
+.subheading {
+	color: hsl(var(--clr-white-hsl) / 50%);
 }

@@ -4,12 +4,12 @@ import React from 'react';
 import { GuessContext } from '../GuessProvider/GuessProvider';
 // Components.
 import Guess from '../Guess';
-// Styles.
-import styles from './GuessBoard.module.css';
 // Utilities.
 import { range } from '../../utils';
-
-const NUM_OF_ALLOWED_GUESSES = 6;
+// Constants.
+import NUM_OF_GUESSES_ALLOWED from '../../constants';
+// Styles.
+import styles from './GuessBoard.module.css';
 
 function GuessBoard() {
   // Get guesses.
@@ -17,7 +17,7 @@ function GuessBoard() {
   // Show it to the world.
   return (
     <div className={styles.board}>
-      {range(NUM_OF_ALLOWED_GUESSES).map((guessNumber) => (
+      {range(NUM_OF_GUESSES_ALLOWED).map((guessNumber) => (
         <Guess key={guessNumber} guess={guesses[guessNumber]} />
       ))}
     </div>

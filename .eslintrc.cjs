@@ -21,9 +21,12 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    '@typescript-eslint/eslint-plugin',
+    'eslint-plugin-tsdoc',
   ],
   rules: {
     'react/react-in-jsx-scope': 0,
     'import/no-extraneous-dependencies': 0,
+	"tsdoc/syntax": "warn"
   },
 };
