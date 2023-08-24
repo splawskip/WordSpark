@@ -14,8 +14,10 @@ function GuessForm() {
 
   const handleSubmit = (event:React.FormEvent<HTMLFormElement>):void => {
     event.preventDefault();
+    const lastActiveElement:HTMLElement = document.activeElement as HTMLElement;
     handleGuessSubmit(tentativeGuess);
     setTentativeGuess('');
+    lastActiveElement?.blur();
   };
 
   const handleChange = (event:React.ChangeEvent<HTMLInputElement>) : void => (
