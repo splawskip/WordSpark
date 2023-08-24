@@ -6,7 +6,9 @@ type HeadingProps = {
 
 type GameStatusContext = {
   gameStatus:string,
-  setGameStatus: React.SetStateAction
+  setGameStatus: React.SetStateAction,
+  isGameOver: { date:string, gameStatus:string }
+  setIsGameOver: React.SetStateAction,
 };
 
 type GuessContextType = {

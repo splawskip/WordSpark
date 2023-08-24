@@ -17,6 +17,7 @@ function GameStatusNotification() {
   const answer = React.useContext(AnswerContext);
   const { guesses } = React.useContext(GuessContext);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const areGuessesEmpty:boolean = guesses.length <= 0;
   // Get current date.
   const date:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
   /**
@@ -42,15 +43,19 @@ function GameStatusNotification() {
       {gameStatus === 'won' ? (
         <p>
           <strong>🎉 Congratulations!</strong>
-          {' '}
-          Got it in
-          {' '}
-          <strong>
-            {guesses.length}
-            {' '}
-            {guesses.length > 1 ? 'guesses' : 'guess'}
-          </strong>
-          .
+          {!areGuessesEmpty ? (
+            <>
+              {' '}
+              Got it in
+              {' '}
+              <strong>
+                {guesses.length}
+                {' '}
+                {guesses.length > 1 ? 'guesses' : 'guess'}
+              </strong>
+              .
+            </>
+          ) : ''}
           {' '}
           Comeback tomorrow!
         </p>
@@ -65,7 +70,7 @@ function GameStatusNotification() {
             Comeback tomorrow!
           </p>
         )}
-      <button ref={buttonRef} className={styles.button} type="button" onClick={handleCopyResults}>Copy results to clipboard</button>
+      {!areGuessesEmpty ? <button ref={buttonRef} className={styles.button} type="button" onClick={handleCopyResults}>Copy results to clipboard</button> : ''}
     </Notification>
   );
 }
