@@ -12,3 +12,7 @@
 	place-items: center;
 	background-color: var(--clr-dark);
 }
+
+.comeback {
+	color: var(--clr-white);
+}
