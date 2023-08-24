@@ -6,7 +6,6 @@ import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
 import Heading from '../Heading/Heading';
 import GuessBoard from '../GuessBoard';
 import GuessForm from '../GuessForm';
-import GameStatusNotification from '../GameStatusNotification';
 import Footer from '../Footer';
 // Styles.
 import styles from './Game.module.css';
@@ -22,7 +21,6 @@ function Game() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.game}>
-        {gameStatus !== 'running' && <GameStatusNotification />}
         <Heading as="h1">WordSpark ⚛️</Heading>
         <Heading as="h2" type="subheading">{date}</Heading>
         <GuessBoard />

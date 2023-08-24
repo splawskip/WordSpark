@@ -24,13 +24,17 @@ function GameStatusNotification() {
   *
   * @returns void
   */
-  const handleCopyResults = () : void => {
+  const handleCopyResults = (event:React.MouseEvent) : void => {
+    // Get button.
+    const button:HTMLButtonElement | null = event.target as HTMLButtonElement;
     // Get player results.
     const results = generateResultsBlocks(guesses, answer);
     // Create sharable text.
     const shareableText = `WordSpark - ${date}:\n${results}\n${document.URL}`;
     // Copy it to player clipboard.
     navigator.clipboard.writeText(shareableText);
+    // Change copy on button.
+    button.textContent = 'Copied to clipboard!';
   };
   // Show it to the world.
   return (
