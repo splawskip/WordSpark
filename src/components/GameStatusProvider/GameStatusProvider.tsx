@@ -2,15 +2,22 @@
 import React from 'react';
 // Hooks.
 import { useLocalStorage } from '../../hooks';
+// Utils.
+import { getCurrentDateTimestamp } from '../../utils';
 // Expose context.
 export const GameStatusContext = React.createContext<GameStatusContext>({} as GameStatusContext);
 
 function GameStatusProvider({ children } : ChildrenOnly) {
   const [isGameOver, setIsGameOver] = useLocalStorage('isGameOver', JSON.stringify({
     gameStatus: 'running',
-    date: new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date()),
+    date: getCurrentDateTimestamp(),
   }));
-  const [gameStatus, setGameStatus] = React.useState<string>(isGameOver.gameStatus);
+  const [gameStatus, setGameStatus] = React.useState<string>(() => {
+    if (isGameOver.date === getCurrentDateTimestamp()) {
+      return isGameOver.gameStatus;
+    }
+    return 'running';
+  });
   // Create context value.
   const GameStatusContextValue = React.useMemo(
     () => ({

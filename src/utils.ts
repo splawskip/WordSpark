@@ -121,3 +121,10 @@ export const generateResultsBlocks = (guesses:string[], answer:string) : string 
   // Spit it out.
   return results;
 };
+
+/**
+ * Gets current date (without a time part) represented by timestamp.
+ *
+ * @returns - string - Timestamp representing current date without a time part.
+ */
+export const getCurrentDateTimestamp = ():number => new Date().setHours(0, 0, 0, 0);
