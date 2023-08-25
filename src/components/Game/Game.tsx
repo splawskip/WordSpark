@@ -11,6 +11,8 @@ import Footer from '../Footer';
 import styles from './Game.module.css';
 // Hooks.
 import { useConfetti } from '../../hooks';
+// Utils.
+import { getCurrentDateTimestamp } from '../../utils';
 
 function Game() {
   const { gameStatus, isGameOver } = React.useContext(GameStatusContext);
@@ -19,7 +21,7 @@ function Game() {
   // Get current date.
   const currentDate:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
   // Get if game should be playable.
-  const playable:boolean = isGameOver.gameStatus === 'running' || isGameOver.date !== new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
+  const playable:boolean = isGameOver.gameStatus === 'running' || isGameOver.date !== getCurrentDateTimestamp();
   // Show it to the world.
   return (
     <div className={styles.wrapper}>

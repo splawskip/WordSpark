@@ -7,7 +7,7 @@ type HeadingProps = {
 type GameStatusContext = {
   gameStatus:string,
   setGameStatus: React.SetStateAction,
-  isGameOver: { date:string, gameStatus:string }
+  isGameOver: { date:number, gameStatus:string }
   setIsGameOver: React.SetStateAction,
 };
 

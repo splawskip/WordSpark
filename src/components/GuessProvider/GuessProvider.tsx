@@ -5,6 +5,8 @@ import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
 import { AnswerContext } from '../AnswerProvider/AnswerProvider';
 // Constants.
 import NUM_OF_GUESSES_ALLOWED from '../../constants';
+// Utils.
+import { getCurrentDateTimestamp } from '../../utils';
 // Expose context.
 export const GuessContext = React.createContext<GuessContextType>({} as GuessContextType);
 
@@ -15,7 +17,7 @@ function GuessProvider({ children } : ChildrenOnly) {
   const GuessContextValue = React.useMemo(() => ({
     guesses,
     handleGuessSubmit: (tentativeGuess:string) : void => {
-      const currentDate:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
+      const currentDate:number = getCurrentDateTimestamp();
       // Add new guess to current guesses.
       const futureGuesses:string[] = [...guesses, tentativeGuess];
       // Set new guesses.
