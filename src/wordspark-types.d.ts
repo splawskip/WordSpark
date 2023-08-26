@@ -24,9 +24,7 @@ type ChildrenOnly = {
 };
 
 type AnswerResponse = {
-  data: {
-    today: string
-  }
+  today: string
 };
 
 type GuessProps = {
