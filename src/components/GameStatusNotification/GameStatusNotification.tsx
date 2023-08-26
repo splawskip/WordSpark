@@ -13,7 +13,7 @@ import styles from '../Notification/Notification.module.css';
 
 function GameStatusNotification() {
   // Get game status.
-  const { gameStatus } = React.useContext(GameStatusContext);
+  const { gameStatus: { status } } = React.useContext(GameStatusContext);
   // Get answer.
   const answer = React.useContext(AnswerContext);
   // Get guesses.
@@ -43,8 +43,8 @@ function GameStatusNotification() {
   };
   // Show it to the world.
   return (
-    <Notification gameStatus={gameStatus}>
-      {gameStatus === 'won' ? (
+    <Notification gameStatus={status}>
+      {status === 'won' ? (
         <p>
           <strong>🎉 Congratulations!</strong>
           {!areGuessesEmpty ? (

@@ -127,4 +127,4 @@ export const generateResultsBlocks = (guesses:string[], answer:string) : string 
  *
  * @returns - string - Timestamp representing current date without a time part.
  */
-export const getCurrentDateTimestamp = ():number => new Date().setHours(0, 0, 0, 0);
+export const getCurrentDateTimestamp = () : number => new Date().setHours(0, 0, 0, 0);

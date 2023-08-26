@@ -34,16 +34,16 @@ export function useConfetti(gameStatus:string) : void {
  * @param initialValue - string - Initial value for the localStorage item.
  * @returns - Array that holds localStorage value and set function.
  */
-export const useLocalStorage = (key:string, initialValue:string) => {
+export const useLocalStorage = <T>(key:string, initialValue:string) => {
   // Get the initial value from localStorage or use the provided initialValue.
   const storedValue:string | null = localStorage.getItem(key);
-  const initial = storedValue || initialValue;
+  const initial = storedValue ?? initialValue;
   // Create a state for localStorage item.
-  const [value, setValue] = React.useState(JSON.parse(initial));
+  const [value, setValue] = React.useState<T>(JSON.parse(initial));
   // Update localStorage when the value changes.
   React.useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
   // Show it to the world.
-  return [value, setValue];
+  return [value, setValue] as const;
 };

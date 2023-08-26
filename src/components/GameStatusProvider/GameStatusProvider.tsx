@@ -8,25 +8,27 @@ import { getCurrentDateTimestamp } from '../../utils';
 export const GameStatusContext = React.createContext<GameStatusContext>({} as GameStatusContext);
 
 function GameStatusProvider({ children } : ChildrenOnly) {
-  const [isGameOver, setIsGameOver] = useLocalStorage('isGameOver', JSON.stringify({
-    gameStatus: 'running',
-    date: getCurrentDateTimestamp(),
+  // Get current date timestamp.
+  const currentDateTimestamp:number = getCurrentDateTimestamp();
+  // Handle game status using localStorage hook.
+  const [gameStatus, setGameStatus] = useLocalStorage<GameStatus>('gameStatus', JSON.stringify({
+    status: 'running',
+    timestamp: currentDateTimestamp,
   }));
-  const [gameStatus, setGameStatus] = React.useState<string>(() => {
-    if (isGameOver.date === getCurrentDateTimestamp()) {
-      return isGameOver.gameStatus;
-    }
-    return 'running';
-  });
-  // Create context value.
+  // Resolve if game status should change.
+  if (gameStatus.status !== 'running' && gameStatus.timestamp !== currentDateTimestamp) {
+    setGameStatus({
+      status: 'running',
+      timestamp: currentDateTimestamp,
+    });
+  }
+  // Build value carried by Game Status Context.
   const GameStatusContextValue = React.useMemo(
-    () => ({
+    (): GameStatusContext => ({
       gameStatus,
       setGameStatus,
-      isGameOver,
-      setIsGameOver,
     }),
-    [gameStatus, setGameStatus, isGameOver, setIsGameOver],
+    [gameStatus, setGameStatus],
   );
   // Show it to the world.
   return (

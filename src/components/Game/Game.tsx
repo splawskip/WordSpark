@@ -16,13 +16,13 @@ import { getCurrentDateTimestamp } from '../../utils';
 
 function Game() {
   // Get game status.
-  const { gameStatus, isGameOver } = React.useContext(GameStatusContext);
+  const { gameStatus: { status, timestamp } } = React.useContext(GameStatusContext);
   // Throw confetti if needed.
-  useConfetti(gameStatus);
+  useConfetti(status);
   // Get current date.
   const currentDate:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());
   // Get if game should be playable.
-  const playable:boolean = isGameOver.gameStatus === 'running' || isGameOver.date !== getCurrentDateTimestamp();
+  const playable:boolean = status === 'running' || timestamp !== getCurrentDateTimestamp();
   // Show it to the world.
   return (
     <div className={styles.wrapper}>
