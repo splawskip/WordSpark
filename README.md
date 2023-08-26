@@ -24,6 +24,7 @@ You can access the live version of WordSpark by visiting: [WordSpark Live](https
 - **GitHub Pages**: Used for hosting the WordSpark application.
 - **GitHub Actions**: Utilized as a simple CI/CD pipeline for automated deployments.
 - **Husky**: Utilized as a pre-commit hooks to ensure code quality.
+- **SWR**: React Hooks for Data Fetching.
 
 ## APIs Used
 
