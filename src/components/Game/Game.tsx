@@ -15,6 +15,7 @@ import { useConfetti } from '../../hooks';
 import { getCurrentDateTimestamp } from '../../utils';
 
 function Game() {
+  // Get game status.
   const { gameStatus, isGameOver } = React.useContext(GameStatusContext);
   // Throw confetti if needed.
   useConfetti(gameStatus);

@@ -12,11 +12,15 @@ import { generateResultsBlocks } from '../../utils';
 import styles from '../Notification/Notification.module.css';
 
 function GameStatusNotification() {
-  // Pull some data from the context.
+  // Get game status.
   const { gameStatus } = React.useContext(GameStatusContext);
+  // Get answer.
   const answer = React.useContext(AnswerContext);
+  // Get guesses.
   const { guesses } = React.useContext(GuessContext);
+  // Get button ref.
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+  // Check if guesses are empty.
   const areGuessesEmpty:boolean = guesses.length <= 0;
   // Get current date.
   const date:string = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date());

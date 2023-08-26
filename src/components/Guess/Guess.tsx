@@ -10,8 +10,9 @@ import { range, checkGuess } from '../../utils';
 import styles from './Guess.module.css';
 
 function Guess({ guess } : GuessProps) {
+  // Get answer.
   const answer = React.useContext(AnswerContext);
-  // Get guess result.
+  // Get results for given guess and answer.
   const result = checkGuess(guess, answer);
   // Show it to the world.
   return (

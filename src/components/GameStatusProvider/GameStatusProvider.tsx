@@ -28,7 +28,7 @@ function GameStatusProvider({ children } : ChildrenOnly) {
     }),
     [gameStatus, setGameStatus, isGameOver, setIsGameOver],
   );
-
+  // Show it to the world.
   return (
     <GameStatusContext.Provider value={GameStatusContextValue}>
       {children}

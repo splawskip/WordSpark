@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // Providers.
-import AnswerProvider from './components/AnswerProvider/AnswerProvider';
+import AnswerProvider from './components/AnswerProvider';
 import GameStatusProvider from './components/GameStatusProvider';
 import GuessProvider from './components/GuessProvider';
 // Components.
