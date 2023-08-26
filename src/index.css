@@ -1,43 +1,43 @@
 :root {
-	--clr-black-hsl: 0 0% 0%;
-	--clr-black: hsl(var(--clr-black-hsl));
-	--clr-white-hsl: 0 0% 100%;
-	--clr-white: hsl(var(--clr-white-hsl));
-	--clr-dark:hsl(225deg 12% 13%);
-	--clr-focus:hsl(204deg 70% 53%);
-	--clr-correct: linear-gradient(135deg, #189D7C 0%, #02C39A 100%);
-	--clr-incorrect: linear-gradient(135deg, #2D3047 0%, #48495F 100%);
-	--clr-misplaced: linear-gradient(135deg, #D9B952 0%, #FDD85D 100%);
-	--clr-lost: linear-gradient(135deg, #C93C3C 0%, #FF5E5E 100%);
-	--clr-heart: hsl(0deg 100% 50%);
+  --clr-black-hsl: 0 0% 0%;
+  --clr-black: hsl(var(--clr-black-hsl));
+  --clr-white-hsl: 0 0% 100%;
+  --clr-white: hsl(var(--clr-white-hsl));
+  --clr-dark:hsl(225deg 12% 13%);
+  --clr-focus:hsl(204deg 70% 53%);
+  --clr-correct: linear-gradient(135deg, #189D7C 0%, #02C39A 100%);
+  --clr-incorrect: linear-gradient(135deg, #2D3047 0%, #48495F 100%);
+  --clr-misplaced: linear-gradient(135deg, #D9B952 0%, #FDD85D 100%);
+  --clr-lost: linear-gradient(135deg, #C93C3C 0%, #FF5E5E 100%);
+  --clr-heart: hsl(0deg 100% 50%);
 }
 
 html {
-	overflow-x: hidden;
-	font-family: Nunito, sans-serif;
-	font-size: 20px;
-	background-color: var(--clr-dark);
+  overflow-x: hidden;
+  font-family: Nunito, sans-serif;
+  font-size: 20px;
+  background-color: var(--clr-dark);
 }
 
 @media screen and (width < 1200px) {
-	html {
-		font-size: 16px;
-	}
+  html {
+    font-size: 16px;
+  }
 }
 
 @media screen and (width < 1024px) {
-	html {
-		font-size: 14px;
-	}
+  html {
+    font-size: 14px;
+  }
 }
 
 @media screen and (width < 375px) {
-	html {
-		font-size: 12px;
-	}
+  html {
+    font-size: 12px;
+  }
 }
 
 #root {
-	width: 100vw;
-	height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
