@@ -14,7 +14,7 @@ function GuessForm() {
   // Get handle submit.
   const { handleGuessSubmit } = React.useContext(GuessContext);
   // Get game status.
-  const { gameStatus } = React.useContext(GameStatusContext);
+  const { gameStatus: { status } } = React.useContext(GameStatusContext);
   /**
   * Handles form submit event.
   *
@@ -55,7 +55,7 @@ function GuessForm() {
           required
           value={tentativeGuess}
           onChange={handleChange}
-          disabled={gameStatus !== 'running'}
+          disabled={status !== 'running'}
         />
       </label>
     </form>

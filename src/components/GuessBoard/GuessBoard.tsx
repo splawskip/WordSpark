@@ -17,11 +17,11 @@ function GuessBoard() {
   // Get guesses.
   const { guesses } = React.useContext(GuessContext);
   // Get game status.
-  const { gameStatus } = React.useContext(GameStatusContext);
+  const { gameStatus: { status } } = React.useContext(GameStatusContext);
   // Show it to the world.
   return (
     <div className={styles.board}>
-      {gameStatus !== 'running' && <GameStatusNotification />}
+      {status !== 'running' && <GameStatusNotification />}
       {range(NUM_OF_GUESSES_ALLOWED).map((guessNumber) => (
         <Guess key={guessNumber} guess={guesses[guessNumber]} />
       ))}

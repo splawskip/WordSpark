@@ -4,15 +4,18 @@ type HeadingProps = {
   children: React.ReactNode;
 };
 
+type GameStatus = {
+  status: string,
+  timestamp: number,
+};
+
 type GameStatusContext = {
-  gameStatus:string,
-  setGameStatus: React.SetStateAction,
-  isGameOver: { date:number, gameStatus:string }
-  setIsGameOver: React.SetStateAction,
+  gameStatus: GameStatus,
+  setGameStatus: (newState:React.SetStateAction<GameStatus>) => void,
 };
 
 type GuessContextType = {
-  guesses:string[],
+  guesses: string[],
   handleGuessSubmit: (tentativeGuess:string) => void
 };
 
@@ -22,7 +25,7 @@ type ChildrenOnly = {
 
 type AnswerResponse = {
   data: {
-    today:string
+    today: string
   }
 };
 
@@ -31,8 +34,8 @@ type GuessProps = {
 };
 
 type GuessCellProps = {
-  letter:string | undefined,
-  status:string | undefined,
+  letter: string | undefined,
+  status: string | undefined,
 };
 
 type ValidatedGuess = {
@@ -42,7 +45,7 @@ type ValidatedGuess = {
 
 type NotificationProps = {
   children: React.ReactNode,
-  gameStatus:string
+  gameStatus: string
 };
 
 type VisuallyHiddenProps = {
