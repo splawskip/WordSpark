@@ -28,7 +28,7 @@
 	width: 20px;
 	height: 20px;
 	margin: 0 20px;
-	color: transparent;
+	color: var(--clr-white);
 	background: var(--clr-heart);
 	border-bottom-right-radius: 5px;
 	transform: rotate(45deg);

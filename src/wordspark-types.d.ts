@@ -44,3 +44,8 @@ type NotificationProps = {
   children: React.ReactNode,
   gameStatus:string
 };
+
+type VisuallyHiddenProps = {
+  children: React.ReactNode,
+  className?: string,
+};

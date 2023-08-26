@@ -1,14 +1,14 @@
 :root {
-	--clr-black-hsl:0 0% 0%;
-	--clr-black:hsl(var(--clr-black-hsl));
-	--clr-white-hsl:0 0% 100%;
-	--clr-white:hsl(var(--clr-white-hsl));
+	--clr-black-hsl: 0 0% 0%;
+	--clr-black: hsl(var(--clr-black-hsl));
+	--clr-white-hsl: 0 0% 100%;
+	--clr-white: hsl(var(--clr-white-hsl));
 	--clr-dark:hsl(225deg 12% 13%);
 	--clr-focus:hsl(204deg 70% 53%);
-	--clr-correct:linear-gradient(135deg, #189D7C 0%, #02C39A 100%);
-	--clr-incorrect:linear-gradient(135deg, #2D3047 0%, #48495F 100%);
-	--clr-misplaced:linear-gradient(135deg, #D9B952 0%, #FDD85D 100%);
-	--clr-lost:linear-gradient(135deg, #C93C3C 0%, #FF5E5E 100%);
+	--clr-correct: linear-gradient(135deg, #189D7C 0%, #02C39A 100%);
+	--clr-incorrect: linear-gradient(135deg, #2D3047 0%, #48495F 100%);
+	--clr-misplaced: linear-gradient(135deg, #D9B952 0%, #FDD85D 100%);
+	--clr-lost: linear-gradient(135deg, #C93C3C 0%, #FF5E5E 100%);
 	--clr-heart: hsl(0deg 100% 50%);
 }
 

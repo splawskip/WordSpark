@@ -7,23 +7,38 @@ import { GameStatusContext } from '../GameStatusProvider/GameStatusProvider';
 import styles from './GuessForm.module.css';
 
 function GuessForm() {
+  // Create state for tentative guess.
   const [tentativeGuess, setTentativeGuess] = React.useState<string>('');
+  // Create ID for guess input.
   const guessInputId:string = React.useId();
+  // Get handle submit.
   const { handleGuessSubmit } = React.useContext(GuessContext);
+  // Get game status.
   const { gameStatus } = React.useContext(GameStatusContext);
-
-  const handleSubmit = (event:React.FormEvent<HTMLFormElement>):void => {
+  /**
+  * Handles form submit event.
+  *
+  * @param event - React.FormEvent
+  * @returns - void
+  */
+  const handleSubmit = (event:React.FormEvent<HTMLFormElement>) : void => {
     event.preventDefault();
     const lastActiveElement:HTMLElement = document.activeElement as HTMLElement;
     handleGuessSubmit(tentativeGuess);
     setTentativeGuess('');
     lastActiveElement?.blur();
+    lastActiveElement?.focus();
   };
-
+  /**
+   * Handles change event on guess input.
+   *
+   * @param event - React.ChangeEvent
+   * @returns - void
+   */
   const handleChange = (event:React.ChangeEvent<HTMLInputElement>) : void => (
     setTentativeGuess(event.target.value.toUpperCase())
   );
-
+  // Show it to the world.
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <label className={styles.label} htmlFor={guessInputId}>

@@ -11,12 +11,16 @@ import { getCurrentDateTimestamp } from '../../utils';
 export const GuessContext = React.createContext<GuessContextType>({} as GuessContextType);
 
 function GuessProvider({ children } : ChildrenOnly) {
+  // Create state for guesses.
   const [guesses, setGuesses] = React.useState<string[]>([]);
   const { setGameStatus, setIsGameOver } = React.useContext(GameStatusContext);
+  // Get answer.
   const answer = React.useContext(AnswerContext);
+  // Build value carried by Guess Context.
   const GuessContextValue = React.useMemo(() => ({
     guesses,
     handleGuessSubmit: (tentativeGuess:string) : void => {
+      // Get current date as timestamp.
       const currentDate:number = getCurrentDateTimestamp();
       // Add new guess to current guesses.
       const futureGuesses:string[] = [...guesses, tentativeGuess];
@@ -40,7 +44,7 @@ function GuessProvider({ children } : ChildrenOnly) {
       }
     },
   }), [guesses, setGameStatus, answer, setIsGameOver]);
-  // Build Guess Context Provider.
+  // Show it to the world.
   return <GuessContext.Provider value={GuessContextValue}>{children}</GuessContext.Provider>;
 }
 

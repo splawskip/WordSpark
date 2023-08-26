@@ -16,6 +16,7 @@ import styles from './GuessBoard.module.css';
 function GuessBoard() {
   // Get guesses.
   const { guesses } = React.useContext(GuessContext);
+  // Get game status.
   const { gameStatus } = React.useContext(GameStatusContext);
   // Show it to the world.
   return (
