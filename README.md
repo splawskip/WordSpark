@@ -30,7 +30,7 @@ You can access the live version of WordSpark by visiting: [WordSpark Live](https
 
 The following APIs are used in the WordSpark application:
 
-- [Wordle Answers Solutions](https://rapidapi.com/Alejandro99aru/api/wordle-answers-solutions): Today's answer.
+- [wordle-api3](https://rapidapi.com/marcandreher/api/wordle-api3).
 
 ## Installation and Usage
 
@@ -57,4 +57,3 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 ## Contact
 
 For any inquiries or support, please contact me by choosing some possible contact option available on my profile.
-
