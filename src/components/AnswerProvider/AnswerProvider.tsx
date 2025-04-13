@@ -12,13 +12,13 @@ export const AnswerContext = React.createContext<string>('');
  * @param url - string - URL that will be called.
  * @returns responseJson - Promise<AnswerResponse>.
  */
-const fetcher = async (url:string): Promise<AnswerResponse> => {
+const fetcher = async (url: string): Promise<AnswerResponse> => {
   // Call Rapid API.
   const response = await fetch(url, {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'a6b0ba1d41msh7ff2c26cbe46ac6p18e0adjsn9e0c74468c46',
-      'X-RapidAPI-Host': 'wordle-answers-solutions.p.rapidapi.com',
+      'x-rapidapi-key': import.meta.env.VITE_WORDLE_API_KEY,
+      'x-rapidapi-host': import.meta.env.VITE_WORDLE_API_HOST,
     },
   });
   // Get as JSON.
@@ -31,22 +31,35 @@ const fetcher = async (url:string): Promise<AnswerResponse> => {
   return responseJson;
 };
 
-function AnswerProvider({ children } : ChildrenOnly) {
+function AnswerProvider({ children }: ChildrenOnly) {
   // Get data.
-  const { data, error } = useSWR('https://wordle-answers-solutions.p.rapidapi.com/today', fetcher);
+  const { data, error } = useSWR(
+    'https://wordle-api3.p.rapidapi.com/getcurrentword',
+    fetcher,
+  );
   // Bail app if sresponsewrong.
   if (error) {
     return (
       <p className={styles.error}>
-        Something&apos;s gone wrong!
-        Please let me know about this 👉
+        Something&apos;s gone wrong! Please let me know about this 👉
         {' '}
-        <a title="WordSpark issues" className={styles.link} href="https://github.com/splawskip/WordSpark/issues" rel="noopener noreferrer">here</a>
+        <a
+          title="WordSpark issues"
+          className={styles.link}
+          href="https://github.com/splawskip/WordSpark/issues"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
       </p>
     );
   }
   // Show it to the world.
-  return <AnswerContext.Provider value={data?.today ?? ''}>{children}</AnswerContext.Provider>;
+  return (
+    <AnswerContext.Provider value={data?.word ?? ''}>
+      {children}
+    </AnswerContext.Provider>
+  );
 }
 
 export default AnswerProvider;
