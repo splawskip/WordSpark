@@ -6,7 +6,7 @@ WordSpark presents an immersive word puzzle gaming experience, reminiscent of th
 
 ## See it live
 
-You can access the live version of WordSpark by visiting: [WordSpark Live](https://splawskip.github.io/WordSpark/)
+You can access the live version of WordSpark by visiting: [WordSpark Live](https://word-spark.vercel.app)
 
 ## Tech Stack:
 
